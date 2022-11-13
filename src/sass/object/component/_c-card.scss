@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.c-card {
+  background-color: $white;
+  padding: rem(21) rem(12) rem(30);
+  box-shadow: 4px 4px 4px 0 rgba($color: #d6d1c9, $alpha: 0.21);
+  border-radius: rem(20);
+  display: block;
+
+  @include mq("md") {
+    padding: rem(24) rem(15);
+  }
+}
+.c-card__img {
+  border-radius: rem(5);
+  overflow: hidden;
+}
+.c-card__img img {
+  width: 100%;
+  aspect-ratio: 310/228;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 392/260;
+  }
+}
+
+.c-card__time {
+  display: inline-block;
+  margin-top: rem(11);
+  font-size: rem(13);
+  line-height: calc(14 / 13);
+  @include mq("md") {
+    margin-top: rem(33);
+  }
+}
+.c-card__time::before {
+  content: "update\02";
+  text-transform: uppercase;
+  white-space: pre;
+}
+.c-card__title {
+  font-size: rem(16);
+  font-weight: bold;
+  line-height: calc(17 / 16);
+  margin-top: rem(11);
+}
